@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-espresso-950 text-cream-50 font-sans antialiased;
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(75, 46, 30, 0.4) 0%, transparent 60%),
+      linear-gradient(180deg, #1a0e07 0%, #24130a 50%, #1a0e07 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-butter-400 to-butter-600 px-6 py-3 font-bold text-espresso-900 shadow-md transition-all duration-200 hover:shadow-glow-md hover:brightness-110 active:scale-[0.97] min-h-[44px];
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-toast-500 bg-transparent px-6 py-3 font-bold text-toast-300 transition-all duration-200 hover:bg-toast-500/10 active:scale-[0.97] min-h-[44px];
+  }
+  .card-surface {
+    @apply rounded-2xl border border-butter-400/60 shadow-card;
+    background: linear-gradient(145deg, rgb(68, 39, 24) 0%, rgb(51, 28, 17) 100%);
+  }
+  .input-field {
+    @apply w-full rounded-xl border-2 border-toast-500/50 bg-espresso-900/80 px-4 py-3 text-cream-50 placeholder-cream-500/50 outline-none transition-colors focus:border-butter-400 min-h-[44px];
+  }
+}
+.tilt-card { transition: transform .15s ease-out, box-shadow .3s ease; transform-style: preserve-3d; will-change: transform; }
+.tilt-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,.5); }
+.float-img { animation: float 4s ease-in-out infinite; transform: translateZ(40px); }
+@keyframes float { 0%,100% { translate: 0 0; } 50% { translate: 0 -8px; } }
+@media (prefers-reduced-motion: reduce) { .tilt-card, .float-img { animation: none; transition: none; } }
